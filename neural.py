@@ -70,7 +70,7 @@ class NeuralNetwork:
                 #weighting bias
                 neuron['weights'][-1] += self.__learningRate * neuron['delta']
 
-    def trainNetwork(self, trainingInputs, trainingOutputs, epochs):
+    def train(self, trainingInputs, trainingOutputs, epochs=1):
         if(len(trainingInputs) != len(trainingOutputs)):
             raise ValueError("Training inputs and outputs should have the same number of tests (rows)")
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
             [1,0],
             [1,1]]
     outputs = [[1],[0],[0],[1]]
-    print(nn.trainNetwork(inputs,outputs,10000))
+    print(nn.train(inputs,outputs,epochs=10000))
     for inputRow in inputs:
         print(str(inputRow)+" "+str(nn.eval(inputRow)))
     print(nn)
