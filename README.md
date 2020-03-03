@@ -19,7 +19,7 @@ This list needs to be as short as possible, always. Nowadays we have two methods
 
 * import/export the neural network
 * add a log system for training outputs
-* create a packaging for PIP
+* add a package to https://pypi.org/
 * add usage examples on Git
 * make transfer functions selectable on creating
 
