@@ -15,13 +15,18 @@ This list needs to be as short as possible, always. Nowadays we have two methods
 `train(trainingInputs, trainingOutputs)`: train the network from a set of inputs and outputs
 
 ---
+### Usage
+
+This project is available as a package on [PyPI.org](https://pypi.org/project/sinner/)
+
+---
 ### To Do List
 
 * import/export the neural network
 * add a log system for training outputs
-* add a package to https://pypi.org/
 * add usage examples on Git
 * make transfer functions selectable on creating
+* improve public methods documentation (swagger?)
 
 ---
 The original version of this implementation was loosely based on [Jason Brownlee's "How to Code a Neural Network with Backpropagation In Python (from scratch)"](https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/) 
