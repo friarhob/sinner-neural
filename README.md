@@ -1,6 +1,6 @@
 ## SINNER - Simplest Implementation of Neural Networks for Effortless Runs 
 
-I worked with Neural Networks more years ago than I'd like to remember. I've always felt that there were no simple way of creating a neural network, and that was a mistake. That's why I've created this Python library.
+I worked with Neural Networks more years ago than I'd like to remember. I'm returning to study "black box models", and I felt that there is no simple way of creating a neural network, and that was a mistake. That's why I've created this Python library.
 
 Creating a new neural network is (and always will be) as simple as `NeuralNetwork(list)`, where `list` is a list of integers with the number of neurons on every layers (the first one being the input, the last one the output, and the rest the hidden ones). Of course there are and will be optional parameters, but it will always work with a standard view for starters.
 
