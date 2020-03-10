@@ -2,7 +2,7 @@
 
 from random import random
 from math import exp
-from os import linesep
+from json import dump, load
 
 class NeuralNetwork:
     def __init__(self, layersSize, learningRate=0.5):
@@ -88,15 +88,16 @@ class NeuralNetwork:
             }]
         return log[0] if epochs==1 else log
 
-#if __name__ == "__main__":
-#    nn = NeuralNetwork(layersSize=[2,4,5,1],learningRate=1)
-#    inputs = [[0,0],
-#            [0,1],
-#            [1,0],
-#            [1,1]]
-#    outputs = [[0],[1],[1],[0]]
-#    print(nn.train(inputs,outputs,epochs=10000))
-#    for inputRow in inputs:
-#        print(str(inputRow)+" "+str(nn.eval(inputRow)))
-#    print(nn)
-#
+    def export(self,filepath):
+        with open(filepath, "w") as outputFile:
+            dump(self.network, outputFile)
+
+    def __import(self,filepath):
+        with open(filepath, "r") as inputFile:
+            self.network = load(inputFile)
+
+    @classmethod
+    def fromFile(cls,filepath):
+        obj = cls([1])
+        obj.__import(filepath)
+

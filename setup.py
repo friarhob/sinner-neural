@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sinner",
-    version="0.0.1",
+    version="0.0.2",
     author="Friar Hob",
     author_email="github@friarhob.33mail.com",
     description="SINNER - Simplest Implementation of Neural Networks for Effortless Runs",

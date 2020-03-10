@@ -8,11 +8,15 @@ Of course "simplest" is not the same as "simplistic", and every aspect of a neur
 
 ---
 ### Public methods
-This list needs to be as short as possible, always. Nowadays we have two methods only:
+This list needs to be as short as possible, always. Nowadays we have three methods only:
 
 `eval(inputs)`: eval an array of inputs with current configuration of the neural network.
 
 `train(trainingInputs, trainingOutputs)`: train the network from a set of inputs and outputs
+
+`export(filePath)`: export a JSON representation of the neural network to an external file
+
+You can also create a neural network from a JSON file by calling `NeuralNetwork.fromFile(filePath)`.
 
 ---
 ### Usage
@@ -22,11 +26,11 @@ This project is available as a package on [PyPI.org](https://pypi.org/project/si
 ---
 ### To Do List
 
-* import/export the neural network
 * add a log system for training outputs
 * add usage examples on Git
 * make transfer functions selectable on creating
 * improve public methods documentation (swagger?)
+* add automated tests
 
 ---
 The original version of this implementation was loosely based on [Jason Brownlee's "How to Code a Neural Network with Backpropagation In Python (from scratch)"](https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/) 

@@ -6,9 +6,17 @@ if __name__ == "__main__":
               [0,1],
               [1,0],
               [1,1]]
-    outputs = [[1],[0],[0],[1]]
-    print(nn.train(inputs,outputs,epochs=10000))
+    outputs = [[0],[1],[1],[0]]
+
+    nn.train(inputs,outputs,epochs=10000)
+    
     for inputRow in inputs:
         print(str(inputRow)+" "+str(nn.eval(inputRow)))
-    print(nn)
+    
+    nn.export("test.json")
+    newNN = NeuralNetwork.fromFile("test.json")
+
+    for inputRow in inputs:
+        print(str(inputRow)+" "+str(nn.eval(inputRow)))
+ 
 
