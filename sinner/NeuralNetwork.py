@@ -74,7 +74,7 @@ class NeuralNetwork:
         if(len(trainingInputs) != len(trainingOutputs)):
             raise ValueError("Training inputs and outputs should have the same number of tests (rows)")
 
-        log = ""
+        log = []
         for epoch in range(epochs):
             SSE = 0
             for i in range(len(trainingInputs)):
@@ -82,8 +82,11 @@ class NeuralNetwork:
                 self.__backwardPropagateError(trainingOutputs[i])
                 self.__updateWeights(trainingOutputs[i])
                 SSE += sum([(trainingOutputs[i][j] - outputs[j])**2 for j in range(len(trainingOutputs[i]))])
-            log+=("epoch: %d, MSE: %.6f" % (epoch+1, (SSE / len(trainingInputs))))+linesep
-        return log
+            log+=[{
+                "epoch": epoch+1,
+                "MSE": (SSE / len(trainingInputs))
+            }]
+        return log[0] if epochs==1 else log
 
 #if __name__ == "__main__":
 #    nn = NeuralNetwork(layersSize=[2,4,5,1],learningRate=1)
@@ -91,7 +94,7 @@ class NeuralNetwork:
 #            [0,1],
 #            [1,0],
 #            [1,1]]
-#    outputs = [[1],[0],[0],[1]]
+#    outputs = [[0],[1],[1],[0]]
 #    print(nn.train(inputs,outputs,epochs=10000))
 #    for inputRow in inputs:
 #        print(str(inputRow)+" "+str(nn.eval(inputRow)))
